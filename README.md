@@ -50,7 +50,7 @@ optional arguments:
                         Max retries; default: 2
   --case-sensitive      Case sensitive search; default: false
   --url-attribs URL_ATTRIBS
-                        HTML tag attributes that contain urls, must be comma-separated; default: 'href,src'
+                        HTML tag attributes that contain urls, must be comma-separated; default: 'href,src,action'
   --result-mode {urls,words,both}
                         Sets the output mode; 'urls' is to show only discovered URLs, 'words' to show only search words that
                         matched, 'both' for showing both (default)

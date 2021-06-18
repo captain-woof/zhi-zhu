@@ -209,7 +209,7 @@ base_parser.add_argument("--disable-colored-output",required=False,default=False
 base_parser.add_argument("--timeout",required=False,default=10,type=int,action='store',help="Request timeout (secs); default: 10 secs")
 base_parser.add_argument("--max-retries",required=False,default=2,type=int,action='store',help="Max retries; default: 2")
 base_parser.add_argument("--case-sensitive",required=False,action='store_true',default=False,help="Case sensitive search; default: false")
-base_parser.add_argument("--url-attribs",required=False,default="href,src",type=str,action='store',help="HTML tag attributes that contain urls, must be comma-separated; default: 'href,src'")
+base_parser.add_argument("--url-attribs",required=False,default="href,src,action",type=str,action='store',help="HTML tag attributes that contain urls, must be comma-separated; default: 'href,src,action'")
 
 result_mode = base_parser.add_argument("--result-mode",type=str,required=False,action='store',default='both',choices=['urls','words','both'],help="Sets the output mode; 'urls' is to show only discovered URLs, 'words' to show only search words that matched, 'both' for showing both (default)")
 
