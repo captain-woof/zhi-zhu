@@ -10,6 +10,9 @@ from queue import Queue, Empty
 from bs4 import BeautifulSoup
 from itertools import cycle
 
+# Supress SSL warnings
+requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
+
 # Globals for the spidering thread
 spideringStatus = {}
 urls_to_spider = Queue()
