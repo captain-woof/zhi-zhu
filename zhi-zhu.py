@@ -129,7 +129,7 @@ def spiderThreadFunc():
                 addToOutOfScopeUrlsFound(url_to_spider)
                 printWithNewLine(fg_failure + "OUT OF SCOPE: {}".format(url_to_spider))
                 continue
-            resp = requests.get(url=url_to_spider,allow_redirects=True,timeout=timeout,cookies=cookies,headers=headers)
+            resp = requests.get(url=url_to_spider,allow_redirects=True,timeout=timeout,cookies=cookies,headers=headers,verify=False)
             souped_response = BeautifulSoup(resp.text,'html.parser')
 
             # Get new urls from the webpage if any
@@ -171,6 +171,7 @@ def spiderThreadFunc():
             # which would mean that there's a possibility of new
             # webpages to work on            
             if list(spideringStatus.values()).count(True) == 0: # If no other threads are working
+                exit_threads = True
                 break
         except requests.exceptions.Timeout:            
             addToSpiderQueue(url_to_spider)
